@@ -1,0 +1,11 @@
+--2025-09-20 05:02:05--  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9msyEdICNVg7t-nHTPhj98EdprPPETSLZug
+Resolving encrypted-tbn0.gstatic.com (encrypted-tbn0.gstatic.com)... 142.251.16.100, 142.251.16.101, 142.251.16.102, ...
+Connecting to encrypted-tbn0.gstatic.com (encrypted-tbn0.gstatic.com)|142.251.16.100|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4775 (4.7K) [image/jpeg]
+Saving to: 'Ethan.jpg'
+
+Ethan.jpg                         0%[                                                       ]       0  --.-KB/s               Ethan.jpg                       100%[======================================================>]   4.66K  --.-KB/s    in 0s      
+
+2025-09-20 05:02:05 (64.7 MB/s) - 'Ethan.jpg' saved [4775/4775]
+
