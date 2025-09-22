@@ -165,7 +165,7 @@ def add_review(request):
             print(response)  # Optional: consider using logger.debug instead
             return JsonResponse(
                 {
-                    "status": 200, 
+                    "status": 200,
                     "message": "Review posted successfully"
                 }
             )
