@@ -1,12 +1,11 @@
 # from django.http import HttpResponseRedirect, HttpResponse
 # from django.shortcuts import get_object_or_404, redirect
 # from datetime import datetime
+# from django.shortcuts import render
+# from django.contrib import messages
 
-from django.shortcuts import render
 from django.contrib.auth.models import User
-
 from django.contrib.auth import logout
-from django.contrib import messages
 
 from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
@@ -104,7 +103,7 @@ def get_cars(request):
     for car_model in car_models:
         cars.append(
             {
-                "CarModel": car_model.name, 
+                "CarModel": car_model.name,
                 "CarMake": car_model.car_make.name
             }
         )
@@ -164,7 +163,12 @@ def add_review(request):
         try:
             response = post_review(data)
             print(response)  # Optional: consider using logger.debug instead
-            return JsonResponse({"status": 200, "message": "Review posted successfully"})
+            return JsonResponse(
+                {
+                    "status": 200, 
+                    "message": "Review posted successfully"
+                }
+            )
         except Exception as e:
             logger.error(f"Error posting review: {e}")
             return JsonResponse({
