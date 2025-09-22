@@ -12,7 +12,8 @@ class CarMake(models.Model):
 
 
 class CarModel(models.Model):
-    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)  # Many-to-One relationship
+    # Many-to-One relationship
+    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)  
     name = models.CharField(max_length=100)
     CAR_TYPES = [
         ('SEDAN', 'Sedan'),
@@ -22,7 +23,11 @@ class CarModel(models.Model):
         ('MUV', 'MUV'),
         # Add more choices as required
     ]
-    car_type = models.CharField(max_length=10, choices=CAR_TYPES, default='SUV')
+    car_type = models.CharField(
+        max_length=10,
+        choices=CAR_TYPES,
+        default='SUV',
+    )
     year = models.IntegerField(
         default=now().year,
         validators=[
@@ -30,7 +35,8 @@ class CarModel(models.Model):
             MinValueValidator(2015)
         ]
     )
-    dealer_id = models.IntegerField()  # Refers to a dealer in Cloudant database
+    # Refers to a dealer in Cloudant database
+    dealer_id = models.IntegerField()  
     mileage = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
