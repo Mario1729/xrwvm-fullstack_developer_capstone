@@ -15,7 +15,6 @@ const dealerships_data = JSON.parse(fs.readFileSync("dealerships.json", 'utf8'))
 
 mongoose.connect("mongodb://mongo_db:27017/",{'dbName':'dealershipsDB'});
 
-
 const Reviews = require('./review');
 
 const Dealerships = require('./dealership');
@@ -91,7 +90,7 @@ app.get('/fetchDealer/:id', async (req, res) => {
     }
 });
 
-//Express route to insert review
+// Express route to insert review
 app.post('/insert_review', express.raw({ type: '*/*' }), async (req, res) => {
   data = JSON.parse(req.body);
   const documents = await Reviews.find().sort( { id: -1 } );
